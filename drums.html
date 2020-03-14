@@ -1,11 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
+	<title>JS Drum Kit</title>
+	<script type="text/javascript" src="http://livejs.com/live.js"></script>
 	<link rel="stylesheet" href="drums.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
 <body>
 <div id="instrument">
-	<div class="keys"></div>
-	<div class="keys"></div>
-	<div class="keys"></div>
-	<div class="keys"></div>
-	<div class="keys"></div>
+	<div class="keys" id="65">
+		<P>A</P>
+		<P>boom</P>
+	</div>
+	<div class="keys" id="83">
+		<p>S</p>
+		<p>clap</p>
+	</div>
+	<div class="keys" id="68">
+		<p>D</p>
+		<p>hihat</p>
+	</div>
+	<div class="keys" id="70">
+		<p>F</p>
+		<p>kick</p>
+	</div>
+	<div class="keys" id="71">
+		<p>G</p>
+		<p>openhat</p>
+	</div>
+	<div class="keys" id="72">
+		<p>H</p>
+		<p>ride</p>
+	</div>
+	<div class="keys" id="74">
+		<p>J</p>
+		<p>snare</p>
+	</div>
+	<div class="keys" id="75">
+		<p>K</p>
+		<p>tink</p>
+	</div>
+	<div class="keys" id="76">
+		<p>L</p>
+		<p>tom</p>
+	</div>
 </div>
+<audio key="65" src="sounds/boom.wav"></audio>
+<audio key="83" src="sounds/clap.wav"></audio>
+<audio key="68" src="sounds/hihat.wav"></audio>
+<audio key="70" src="sounds/kick.wav"></audio>
+<audio key="71" src="sounds/openhat.wav"></audio>
+<audio key="72" src="sounds/ride.wav"></audio>
+<audio key="74" src="sounds/snare.wav"></audio>
+<audio key="75" src="sounds/tink.wav"></audio>
+<audio key="76" src="sounds/tom.wav"></audio>
+<script>
+	window.addEventListener('keydown', function(e){
+		const audio = document.querySelector(`audio[key="${e.keyCode}"`);
+		var current = document.getElementById(`"${e.keyCode}"`);
+		if(!audio){
+			return;
+		}
+		audio.currentTime = 0;
+		audio.play();
+		current.classList.add('playing');
+	});
+</script>
 </body>
+</html>
