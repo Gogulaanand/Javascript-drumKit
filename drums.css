@@ -7,6 +7,7 @@ html{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+	background: url(https://i.imgur.com/b9r5sEL.jpg);
 }
 #instrument{
 	margin: auto auto;
@@ -21,26 +22,20 @@ html{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	color: #fbff1e;
-	background-blend-mode: luminosity;
-}
-.keys::after{
-	content: "";
-	background: url(https://i.imgur.com/b9r5sEL.jpg);
-	opacity: 0.5;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	position: absolute;
-	z-index: -1;   
-	  
+	background: rgba(0,0,0,0.5);
+	color: #ffffff;
+	transition: all 0.07s ease-in;
 }
 .keys p:first-child{
 	font-weight: bold;
 	font-size: 2.5em;
 }
+.keys :nth-child(2){
+	text-transform: uppercase;
+	color: rgba(255,255,0,1);
+}
 .playing{
+	transform: scale(1.1);
 	border: 2px solid red;
 	box-shadow:
 		0 2.8px 10px #f56968,

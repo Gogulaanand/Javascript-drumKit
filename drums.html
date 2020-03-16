@@ -3,45 +3,45 @@
 <head>
 	<meta charset="UTF-8">
 	<title>JS Drum Kit</title>
-	<script type="text/javascript" src="http://livejs.com/live.js"></script>
+	<!-- <script type="text/javascript" src="http://livejs.com/live.js"></script> -->
 	<link rel="stylesheet" href="drums.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
 <div id="instrument">
-	<div class="keys" id="65">
+	<div class="keys" key="65">
 		<P>A</P>
 		<P>(boom)</P>
 	</div>
-	<div class="keys" id="83">
+	<div class="keys" key="83">
 		<p>S</p>
 		<p>(clap)</p>
 	</div>
-	<div class="keys" id="68">
+	<div class="keys" key="68">
 		<p>D</p>
 		<p>(hihat)</p>
 	</div>
-	<div class="keys" id="70">
+	<div class="keys" key="70">
 		<p>F</p>
 		<p>(kick)</p>
 	</div>
-	<div class="keys" id="71">
+	<div class="keys" key="71">
 		<p>G</p>
 		<p>(openhat)</p>
 	</div>
-	<div class="keys" id="72">
+	<div class="keys" key="72">
 		<p>H</p>
 		<p>(ride)</p>
 	</div>
-	<div class="keys" id="74">
+	<div class="keys" key="74">
 		<p>J</p>
 		<p>(snare)</p>
 	</div>
-	<div class="keys" id="75">
+	<div class="keys" key="75">
 		<p>K</p>
 		<p>(tink)</p>
 	</div>
-	<div class="keys" id="76">
+	<div class="keys" key="76">
 		<p>L</p>
 		<p>(tom)</p>
 	</div>
@@ -55,17 +55,6 @@
 <audio key="74" src="sounds/snare.wav"></audio>
 <audio key="75" src="sounds/tink.wav"></audio>
 <audio key="76" src="sounds/tom.wav"></audio>
-<script>
-	window.addEventListener('keydown', function(e){
-		const audio = document.querySelector(`audio[key="${e.keyCode}"`);
-		var current = document.getElementById(`"${e.keyCode}"`);
-		if(!audio){
-			return;
-		}
-		audio.currentTime = 0;
-		audio.play();
-		current.classList.add('playing');
-	});
-</script>
+<script type= "text/javascript" src="drums.js"></script>
 </body>
 </html>
